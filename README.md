@@ -9,6 +9,7 @@ $ npm install express-log --save
 
 
 ### Example
+
 ````javascript
 var express	= require('express');
 var logger 	= require('express-log');

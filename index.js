@@ -1,7 +1,9 @@
 
-var logger = function(options){
+require('colors');
+
+module.exports = function(options){
   var log = function(req, res){
-    console.log('%s %s %jms',req.method, req.url, res.responseTime);
+    console.log('%s %s %s %jms',req.method.green, req.url, (res.statusCode+ '').gray,res.responseTime);
   };
   return function(req, res, next){
     var _end = res.end;
@@ -16,4 +18,3 @@ var logger = function(options){
   }
 };
 
-module.exports = logger;
